@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: 'Work Sans', 'Noto Sans';
+  --fc-border-color: #f2f2f3;
+  --fc-today-bg-color: rgba(95, 255, 188, 0.15);
+  --color-green: #bbd081;
+  --color-blue: #1fb9ef;
+  --color-blue-hover: #0e87b3;
+  @apply !text-stone-600;
+}
+
+@layer components{
+  .input-text{
+    @apply mt-1 block w-full px-3 py-1 border border-stone-300 rounded-md text-sm focus:outline-none focus:border-[--color-green]
+    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none;
+  }
+
+  .input-text-filter{
+    @apply border border-slate-300 outline-none focus:outline-none focus:ring w-full pr-10;
+  }
+
+  .input-select{
+    @apply mt-1 block w-full px-3 pt-1 pb-1 border border-stone-300 rounded-md text-sm focus:outline-none focus:border-[--color-green]
+                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none;
+  }
+
+  .input-date{
+    @apply mt-1 block w-full px-3 p-0.5 pb-1 border border-stone-300 rounded-md text-sm focus:outline-none focus:border-[--color-green]
+                    disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none;
+  }
+
+  .btn-primary {
+    @apply flex items-center bg-[--color-blue] text-white px-2 py-1 rounded-md hover:bg-[--color-blue-hover];
+  }
+
+  .btn-secondary {
+    @apply flex border items-center  border-[#c0c6c7] text-stone-800 px-2 py-1 rounded-md  hover:bg-[#c0c6c7];
+  }
+
+
+  .btn-yellow {
+    @apply flex border bg-yellow-500 cursor-pointer px-2 py-1 rounded-md hover:bg-yellow-300;
+  }
+
+  .btn-confirm {
+    @apply flex border bg-green-600 cursor-pointer px-2 py-1 rounded-md focus:border-[#1a7275] text-white hover:text-black;
+  }
+
+  .btn-cancel {
+    @apply flex border bg-red-500 cursor-pointer px-2 py-1 rounded-md hover:bg-red-300 text-white hover:text-black;
+  }
+
+  .title-form {
+    @apply text-2xl font-semibold;
+  }
+}
+
+.tooltip span{
+  @apply invisible absolute;
+}
+
+.tooltip:hover span {
+  @apply visible z-50 ;
+}
+
+
+.dropdown-container {
+  height: 45px;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 1 rem;
+}
+
+.item-renderer > input {
+   display: none;
+}
+
+option{
+  border-radius: 3rem !important;
+}
+
+.react-tabs__tab--selected {
+  border-color: var(--color-green) !important;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid var(--color-green)  !important;
+}
+
+
+.spinner {
+  /* Spinner size and color */
+  width: 1.2rem;
+  height: 1.2rem;
+  border-top-color: rgb(68, 68, 68);
+  border-left-color: #444;
+
+  /* Additional spinner styles */
+  animation: spinner 400ms linear infinite;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;  
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Animation styles */
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Optional — create your own variations! */
+.spinner-large {
+  width: 5rem;
+  height: 5rem;
+  border-width: 6px;
+}
+
+.spinner-slow {
+  animation: spinner 0.8s linear infinite;
+}
+
+.spinner-blue {
+  border-top-color: #09d;
+  border-left-color: #09d;
+}
+
+html {
+	overflow-y:scroll;
+}
+
+
+.iGDrkx {
+  padding-left: 0px !important;
+}
+
+.jfdmlP {
+  padding: 0px !important;
+}
+
+
+.css-81c8zb-container {
+  width: 100% !important;
+}
+
+.css-1xyhgz4-control {
+  box-shadow: none !important;
+}
+
+.css-1xyhgz4-control:hover {
+  border: 1px solid #1a7275 !important;
+}
+
+
+
+
+
+
+/* fullCalendar */
+
+.fc .fc-button {
+  @apply bg-[--color-blue] hover:bg-[--color-blue-hover] text-white border border-transparent hover:border-transparent !ring-0;
+}
+
+
+.fc-timegrid-col-events {
+  margin: 1px 20px 1px 1px !important;
+  display: block !important;
+}
+
+.fc-timegrid-col-events div {
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+.fc-timegrid-col-events div:hover {
+  z-index: 4 !important;
+}
+
+.fc-theme-standard td{
+  border: none !important;
+  border-bottom: 1px solid var(--fc-border-color) !important;
+}
+
+
+.fc-timegrid-event-harness-inset .fc-timegrid-event, .fc-timegrid-event.fc-event-mirror, .fc-timegrid-more-link {
+  box-shadow: none;
+  border: none !important;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border: none !important;
+}
+
+.shadow {
+  box-shadow: none !important;
+}
+
+.fc .fc-timegrid-col-frame {
+  min-height: 100%;
+  position: relative;
+  border-right: 1px solid var(--fc-border-color);
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 20px 4px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+
+.fc-button-active {
+  @apply !bg-white !text-stone-800 border !border-[--color-blue];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.react-calendar {
+  width: 250px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid var(--color-green);
+  @apply text-sm rounded-md;
+}
+
+.react-calendar--doubleView {
+  width: 700px;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+}
+
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  height: 40px;
+}
+
+.react-calendar__navigation button {
+  min-width: 40px;
+  background: none;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: capitalize;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5em;
+}
+
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #757575;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+
+.react-calendar__tile {
+  max-width: 100%;
+  padding: 5px 6.6667px;
+  background: none;
+  text-align: center;
+  font: inherit;
+  font-size: 0.833em;
+  border-radius: 5px;
+}
+
+.react-calendar__tile:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__tile--now {
+  background: #ffff76;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #ffffa9;
+}
+
+.react-calendar__tile--hasActive {
+  background: #76baff;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #a9d4ff;
+}
+
+.react-calendar__tile--active {
+  background: var(--color-blue);
+  color: white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1087ff;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
+
+
+
+.sticky-div {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; /* Puedes ajustar este valor según tus necesidades */
+  z-index: 1; /* Esto asegura que el div fijado esté por encima del contenido desplazable */
+}
+
+.td-li-appointment li {
+  @apply border;
+}
+
+
+
+
+.event-container {
+  position: relative;
+}
+
+.stacked-event {
+  position: absolute !important;
+  left: 0;
+  width: 100%;
+  padding: 4px;
+  background-color: #007bff; /* Color de fondo de los eventos */
+  color: #fff; /* Color del texto de los eventos */
+  border: 1px solid #0056b3; /* Borde de los eventos */
+  margin-bottom: 2px; /* Espacio entre eventos apilados */
+}
